@@ -1,8 +1,8 @@
 <p align="center">
  <img src="images/Logo.png" alt="HTML" width="150" />
 </p>
-<p style="font-size: 96px; font-weight: 700; letter-spacing: -2px;  color: #007FFF;" align="center">
-    BACK-END
+<p align="center" >
+ <img src="images/BACK-END.png" alt="HTML" width="300" />
 </p>
 
 
