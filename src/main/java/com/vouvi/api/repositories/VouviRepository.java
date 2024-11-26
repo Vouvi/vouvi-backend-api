@@ -10,5 +10,5 @@ import java.util.UUID;
 
 @Repository
 public interface VouviRepository extends JpaRepository<Users, Integer> {
-    
+    List<Users> findByUsername(String username);
 }

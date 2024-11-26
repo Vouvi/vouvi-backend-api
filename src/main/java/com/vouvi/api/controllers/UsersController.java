@@ -29,4 +29,9 @@ public class UsersController {
         return Attributes;
     }
 
+    @GetMapping("/username/{username}")
+    public List<Users> searchByUsername(@PathVariable String username) {
+        return vouviRepository.findByUsername(username);
+    }
+
 }
