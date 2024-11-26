@@ -15,5 +15,18 @@ import java.util.Optional;
 @RequestMapping("/users")
 public class UsersController {
 
+    @Autowired
+    private VouviRepository vouviRepository;
+
+    @GetMapping("/{id}")
+    public Users getById(@PathVariable int id) {
+        return vouviRepository.findById(id).orElseThrow();
+    }
+
+    @PostMapping("/post")
+    public Users create(@RequestBody Users Attributes){
+        vouviRepository.save(Attributes);
+        return Attributes;
+    }
 
 }
