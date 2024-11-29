@@ -10,38 +10,38 @@ import java.util.Date;
 @Setter
 @Getter
 @Entity
-@Table(name = "users")
-public class Users {
+@Table(name = "tb_user")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user")
-    private int idUser;
+    private int id;
 
     @Column(name = "email_user")
-    private String emailUser;
+    private String email;
 
     @Column(name = "password_user")
-    private String passwordUser;
+    private String password;
 
     @Column(name = "cep_user")
-    private int cepUser;
+    private char[] cep = new char[8];
 
     @Column(name = "birthdate_user")
-    private Date birthdateUser;
+    private Date birthdate;
 
     @Column(name = "gender_user")
-    private String genderUser;
+    private String gender;
 
     @Column(name = "pronoun_user")
-    private String pronounUser;
+    private String pronoun;
 
-    @Column(name = "username")
+    @Column(name = "username_user")
     private String username;
 
     @Column(name = "name_user")
-    private String nameUser;
+    private String name;
 
     @Column(name = "lastname_user")
-    private String lastnameUser;
+    private String lastname;
 }

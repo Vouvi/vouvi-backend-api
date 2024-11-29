@@ -1,7 +1,7 @@
 package com.vouvi.api.controllers;
 
-import com.vouvi.api.models.Users;
-import com.vouvi.api.repositories.VouviRepository;
+import com.vouvi.api.models.User;
+import com.vouvi.api.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,29 +18,28 @@ import java.util.List;
 @CrossOrigin
 @RestController
 @RequestMapping("/users")
-public class UsersController {
+public class UserController {
 
     @Autowired
-    private VouviRepository vouviRepository;
+    private UserService userService;
 
-    @GetMapping("/")
-    public List<Users> getUsers() {
-        return vouviRepository.findAll();
+    @GetMapping
+    public List<User> getUsers() {
+        return userService.getAllUsers();
     }
 
     @GetMapping("/{username}")
-    public List<Users> searchByUsername(@PathVariable String username) {
-        return vouviRepository.findByUsername(username);
+    public User searchByUsername(@PathVariable String username) {
+        return userService.getUserByUsername(username);
     }
 
     @GetMapping("/id")
-    public Users getById(@RequestParam int id) {
-        return vouviRepository.findById(id).orElseThrow();
+    public User getById(@RequestParam int id) {
+        return userService.getUserById(id);
     }
 
-    @PostMapping("/")
-    public Users createNewUser(@RequestBody Users Attributes) {
-        vouviRepository.save(Attributes);
-        return Attributes;
+    @PostMapping
+    public User createNewUser(@RequestBody User newUser) {
+        return userService.createNewUser(newUser);
     }
 }
