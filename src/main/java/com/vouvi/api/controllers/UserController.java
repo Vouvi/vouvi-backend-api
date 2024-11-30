@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -42,8 +43,9 @@ public class UserController {
         return userService.getUserById(id);
     }
 
-    @PostMapping
-    public User createNewUser(@RequestBody User newUser) {
+    // Criar um novo usuário
+    @PostMapping("/register")
+    public User registerUser(@RequestBody User newUser) {
         return userService.createNewUser(newUser);
     }
 
