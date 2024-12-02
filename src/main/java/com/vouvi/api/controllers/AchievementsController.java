@@ -1,7 +1,7 @@
 package com.vouvi.api.controllers;
 
 import com.vouvi.api.models.Achievement;
-import com.vouvi.api.services.AchievementsService;
+import com.vouvi.api.services.AchievementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +14,7 @@ import java.util.List;
 public class AchievementsController {
 
     @Autowired
-    private AchievementsService achievementsService;
+    private AchievementService achievementsService;
 
     @GetMapping
     public List<Achievement> getAllAchievements() {

@@ -14,12 +14,14 @@ public class Achievement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_achievement")
-    private Long idAchievement;
+    private int idAchievement;
 
     @Column(name = "name_achievement", nullable = false)
     private String nameAchievement;
 
     @Column(name = "describe_achievement", nullable = false)
     private String describeAchievement;
-    
+
+
+
 }
