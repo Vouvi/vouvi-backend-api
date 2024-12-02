@@ -45,4 +45,10 @@ public class User {
     @Column(name = "lastname_user")
     private String lastname;
 
+    @Column(name = "xp_user")
+    private int xp;
+
+    @Column(name = "vcoin_user")
+    private int vcoin;
+
 }

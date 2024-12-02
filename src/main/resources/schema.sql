@@ -10,5 +10,7 @@ CREATE TABLE tb_user (
     pronoun_user VARCHAR(20) NOT NULL,
     username_user VARCHAR(30) NOT NULL UNIQUE,
     name_user VARCHAR(30) NOT NULL,
-    lastname_user VARCHAR(20) NOT NULL
+    lastname_user VARCHAR(20) NOT NULL,
+    xp_user INT DEFAULT 0,
+    vcoin_user INT DEFAULT 0
 );
