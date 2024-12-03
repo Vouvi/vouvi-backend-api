@@ -1,5 +1,6 @@
 package com.vouvi.api.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import lombok.Getter;
@@ -51,5 +52,9 @@ public class User {
 
     @Column(name = "vcoin_user")
     private int vcoin;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<UserAchievement> userAchievements;
 
 }

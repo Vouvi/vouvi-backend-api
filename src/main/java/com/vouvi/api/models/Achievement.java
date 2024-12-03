@@ -1,9 +1,12 @@
 package com.vouvi.api.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -22,6 +25,7 @@ public class Achievement {
     @Column(name = "describe_achievement", nullable = false)
     private String describeAchievement;
 
-
-
+    @JsonIgnore
+    @OneToMany(mappedBy = "achievement", cascade = CascadeType.ALL)
+    private List<UserAchievement> userAchievements;
 }
