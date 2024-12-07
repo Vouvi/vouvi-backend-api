@@ -10,7 +10,11 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Habilita para todas as rotas
-                .allowedOrigins("http://localhost:5173") // Permite requisições do frontend
+                .allowedOrigins(
+                        "http://localhost:5173",
+                        "https://vouvi.github.io/vouvi-frontend-client/",
+                        "https://www.app.vouvi.com.br"
+                ) // Permite requisições do frontend
                 .allowedMethods("GET", "POST", "PUT", "DELETE") // Métodos permitidos
                 .allowedHeaders("*") // Permite todos os cabeçalhos
                 .allowCredentials(true); // Permite cookies/credenciais
