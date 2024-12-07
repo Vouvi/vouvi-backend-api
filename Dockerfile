@@ -9,7 +9,7 @@ RUN mvn clean install -DskipTests
 
 FROM openjdk:23-jdk-slim
 
-EXPOSE 8080
+EXPOSE 3000
 
 COPY --from=build ./api-0.0.1-SNAPSHOT.jar app.jar
 
